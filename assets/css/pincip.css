@@ -1,0 +1,36 @@
+body {
+    background: #9360EE;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #16BFFD, #9360EE);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #16BFFD, #9360EE);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.cont {
+    width: 650px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 80px;
+    padding-top: 50px;
+}
+
+@media (min-width: 1250px) {
+    .container {
+        width: 100px;
+        padding-bottom: 20px;
+    }
+}
+
+img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.footer {
+    background-color: rgb(53, 52, 52);
+    color: white;
+    height: 150px;
+}
