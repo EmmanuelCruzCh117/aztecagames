@@ -1,10 +1,14 @@
 body {
-    background: #9360EE;
+    background: #ee9460;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #16BFFD, #9360EE);
+    background: -webkit-linear-gradient(to left, #EEA849, #F46B45);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #16BFFD, #9360EE);
+    background: linear-gradient(to left, #EEA849, #F46B45);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.navbar-nav a:hover {
+    background-color: #ee9460;
 }
 
 .cont {
