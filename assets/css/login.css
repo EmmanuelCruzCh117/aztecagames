@@ -63,32 +63,6 @@ body {
 
 /*--------------------*/
 
-.textboxnew {
-    width: 100%;
-    overflow: hidden;
-    font-size: 20px;
-    padding: 4px 0;
-    margin: 4px 0;
-    border-bottom: 2px solid #ffffff;
-}
-
-.textboxnew i {
-    width: 26px;
-    float: left;
-    text-align: center;
-}
-
-.textboxnew input {
-    border: none;
-    outline: none;
-    background: none;
-    color: white;
-    font-size: 18px;
-    width: 80%;
-    float: left;
-    margin: 0 10px;
-}
-
 ::placeholder {
     color: wheat;
     opacity: 0.85;
@@ -96,6 +70,10 @@ body {
 
 
 /*-----------------*/
+
+.back {
+    color: rgb(255, 255, 255);
+}
 
 .btnnew:hover {
     color: rgb(255, 255, 255);
