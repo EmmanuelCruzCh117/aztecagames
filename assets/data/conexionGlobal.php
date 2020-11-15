@@ -5,18 +5,19 @@ class ConexionGlobal{
     function conectar(){
               $conn = null;
           try{
+
               $conn = new PDO('mysql:host=localhost;dbname=aztecagame','root','');
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
               //echo 'Se estableció la conexión <br> <br>';
 
-          }catch(PDOException $e){
+            }catch(PDOException $e){
                 die(print_r('Error conectando a la base de datos:' . $e->getMessage()));
-          } 
-        return $conn;
+            } 
+            return $conn;
         }
       
-        function buscarUsuario($user, $pass){
+    function buscarUsuario($user, $pass){
             $con = $this->conectar(); //mandar llamar al metodo de conectar
 
             $consulta = 'SELECT nombre
@@ -32,7 +33,7 @@ class ConexionGlobal{
             return $numRegistros;
         }
         
-        function registroUsuario($user, $pass, $nombre, $correo, $direccion, $telefono){
+    function registroUsuario($user, $pass, $nombre, $correo, $direccion, $telefono){
             $con = $this->conectar();
              $stmt = $con->prepare('INSERT INTO usuario (usuario, contrasena, nombre, correo, direccion, telefono) VALUES (:user, :pass, :nom, :mail, :dir, :tel)');
              $rows = $stmt->execute(array(':user'=>$user,
@@ -46,7 +47,7 @@ class ConexionGlobal{
              
              }
           }
-          function registraComentario($nombre, $correo, $asunto, $mensaje){
+    function registraComentario($nombre, $correo, $asunto, $mensaje){
             $con = $this->conectar();
              $stmt = $con->prepare('INSERT INTO comentario (nombre, correo, asunto, mensaje) VALUES (:nom, :mail, :asu, :men)');
              $rows = $stmt->execute(array(':nom'=>$nombre,
@@ -57,9 +58,9 @@ class ConexionGlobal{
                  echo 'Inserción correcta';
              }
             }
-        }
+        
 
-        function buscarProducto(){
+    function buscarProducto(){
             $con = $this->conectar(); //mandar llamar al metodo de conectar
 
             $consulta = 'SELECT * FROM producto';
@@ -72,7 +73,7 @@ class ConexionGlobal{
 
             return $registros;
 
-    }
-}
+            }
+        }
 
 ?>

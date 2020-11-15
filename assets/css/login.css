@@ -26,7 +26,7 @@ body {
 }
 
 .login-box a {
-    color: rgb(236, 171, 72);
+    color: #FFCA00;
 }
 
 .login-box a:hover {
@@ -72,9 +72,17 @@ body {
 /*-----------------*/
 
 .back {
-    color: rgb(255, 255, 255);
-    margin-top: 25px;
-    margin-left: 25px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.back a {
+    color: #FFCA00;
+}
+
+.back a:hover {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .btnnew:hover {
@@ -84,7 +92,7 @@ body {
 .btnnew {
     width: 100%;
     background: none;
-    background-color: rgb(231, 108, 64);
+    background-color: #F7751E;
     border: 2px solid #ffffff;
     color: rgb(218, 218, 218);
     padding: 5px;
