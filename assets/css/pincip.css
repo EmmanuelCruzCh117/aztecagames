@@ -1,3 +1,4 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
 body {
     background: #ee9460;
     /* fallback for old browsers */
@@ -37,4 +38,9 @@ img {
     background-color: rgb(53, 52, 52);
     color: white;
     height: 150px;
+}
+
+.footer .container-xl i {
+    width: 75px;
+    height: 75px;
 }

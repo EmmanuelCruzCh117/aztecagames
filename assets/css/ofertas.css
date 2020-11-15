@@ -1,0 +1,99 @@
+body {
+    background: #ee9460;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #92e662, #5eff00);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #92e662, #5eff00);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.navbar-nav a:hover {
+    background-color: #ee9460;
+}
+
+
+/*---------------------*/
+
+.container {
+    margin-top: 75px;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.container .contact-form {
+    width: 53%;
+    margin-left: 2%;
+    float: left;
+}
+
+.container .maps img {
+    margin-top: 85px;
+    width: 45%;
+    float: left;
+}
+
+.container .contact-form .title {
+    font-size: 2.5em;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    color: #242424;
+    margin: 5% 8%;
+}
+
+.container .contact-form input,
+.container .contact-form textarea {
+    width: 450px;
+    padding: 3%;
+    margin: 2% 8%;
+    color: #242424;
+    border: 1px solid #B7B7B7;
+}
+
+.container .contact-form input::placeholder,
+.container .contact-form textarea::placeholder {
+    color: #242424;
+}
+
+.container .contact-form .btn-send {
+    background: #F7751E;
+    width: 180px;
+    height: 60px;
+    color: #FFFFFF;
+    font-weight: 700;
+    margin: 2% 8%;
+    border: none;
+}
+
+.container .contact-form .subtitle {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 0 4% 5% 8%;
+}
+
+
+/*---------------------*/
+
+.cont {
+    width: 650px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 80px;
+    padding-top: 50px;
+}
+
+@media (min-width: 1250px) {
+    .container {
+        width: 100px;
+        padding-bottom: 20px;
+    }
+}
+
+.footer {
+    background-color: rgb(53, 52, 52);
+    color: white;
+    height: 150px;
+}
