@@ -1,3 +1,4 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
 body {
     background: #ee9460;
     /* fallback for old browsers */
@@ -95,5 +96,23 @@ body {
 .footer {
     background-color: rgb(53, 52, 52);
     color: white;
-    height: 150px;
+    height: auto;
+}
+
+.footer .container-xl i {
+    height: 10px;
+    font-size: 30px;
+}
+
+.container {
+    text-align: center;
+}
+
+.footer .container-xl a {
+    font-size: 20px;
+    text-decoration: none;
+    border-color: snow;
+    background-color: rgb(63, 63, 63);
+    color: rgb(255, 255, 255);
+    padding: 13px 13px;
 }

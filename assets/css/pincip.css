@@ -37,10 +37,27 @@ img {
 .footer {
     background-color: rgb(53, 52, 52);
     color: white;
-    height: 150px;
+    height: auto;
 }
 
 .footer .container-xl i {
-    width: 75px;
-    height: 75px;
+    height: 10px;
+    font-size: 30px;
+}
+
+.footer .container-xl p {
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.footer .container-xl a {
+    font-size: 20px;
+    text-decoration: none;
+    border-color: snow;
+    background-color: rgb(63, 63, 63);
+    color: rgb(255, 255, 255);
+    padding: 13px 13px;
 }
