@@ -5,7 +5,7 @@ $(document).ready(function() {
     });
 
     async function mostrarDato() {
-        const datos = new FormData(document.getElementById('infocontacto'));
+        const datos = new FormData(document.getElementById('comentarios'));
         await fetch('assets/data/comentarios_conexion.php', {
             method: 'POST',
             body: datos

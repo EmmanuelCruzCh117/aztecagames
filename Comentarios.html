@@ -30,7 +30,7 @@
         });
 
         const request = {
-            query: "Plaza de Bellecour",
+            query: "CENTRAL AZTECA GAMES",
             fields: ["name", "geometry"]
         }
 
@@ -95,12 +95,12 @@
         <div class="contact-form">
             <h1 class="title">Déjanos tu opinión</h1>
             <h2 class="subtitle">Nos encantaría escucharte :D</h2>
-            <form action="">
-                <input type="text" name="name" placeholder="Nombre" />
-                <input type="email" name="e-mail" placeholder="Correo" />
-                <input type="tel" name="phone" placeholder="Teléfono" />
-                <textarea name="text" id="" rows="5" placeholder="Comentario"></textarea>
-                <button class="btn-send">Enviar</button>
+            <form method="POST" id="comentarios">
+                <input type="text" id="comNombre" name="comNombre" placeholder="Nombre">
+                <input type="email" id="comCorreo" name="comCorreo" placeholder="Correo" />
+                <input type="tel" id="comTelefono" name="comTelefono" placeholder="Teléfono" />
+                <textarea name="text" id="comComentario" rows="5" placeholder="Comentario"></textarea>
+                <button id="btnComentarios" class="btn-send">Enviar</button>
             </form>
         </div>
 

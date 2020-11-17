@@ -3,19 +3,19 @@
 
     $obj = new Conexion;
 
-    $nombre     = $_POST['conNombre'];
-    $correo     = $_POST['conCcorreo'];
-    $asunto     = $_POST['conAsunto'];
-    $mensaje    = $_POST['conMensaje'];
+    $nombre     = $_POST['comNombre'];
+    $correo     = $_POST['comCorreo'];
+    $telefono     = $_POST['comTelefono'];
+    $comentario    = $_POST['comComentario'];
 
-    $res = $obj->registraComentario($nombre,$correo,$asunto,$mensaje);
+    $res = $obj->registraComentario($nombre,$correo,$telefono,$comentario);
 
     if($res == 1){
-        $datosreg  = array('dato' => 'ok');
+        $datos  = array('dato' => 'ok');
     }else{
-        $datosreg  = array('dato' => 'no');
+        $datos  = array('dato' => 'no');
 
     }
-    echo json_encode($datosreg, JSON_FORCE_OBJECT);
+    echo json_encode($datos, JSON_FORCE_OBJECT);
 
 ?>

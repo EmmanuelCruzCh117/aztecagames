@@ -47,17 +47,18 @@ class ConexionGlobal{
              
              }
           }
-    function registraComentario($nombre, $correo, $asunto, $mensaje){
+    function registraComentario($nombre, $correo, $telefono, $comentario){
             $con = $this->conectar();
-             $stmt = $con->prepare('INSERT INTO comentario (nombre, correo, asunto, mensaje) VALUES (:nom, :mail, :asu, :men)');
+             $stmt = $con->prepare('INSERT INTO comentario (nombre, correo, telefono, comentario) VALUES (:nom, :mail, :tel, :com)');
              $rows = $stmt->execute(array(':nom'=>$nombre,
                                              ':mail'=>$correo,
-                                            ':asu'=>$asunto,
-                                            ':men'=>$mensaje));
-             if($rows == 1){
+                                            ':tel'=>$telefono,
+                                            ':com'=>$comentario));
+             return $rows;
+                                
                  echo 'Inserción correcta';
              }
-            }
+            
         
 
     function buscarProducto(){

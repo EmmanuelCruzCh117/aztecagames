@@ -27,9 +27,6 @@
                         <a href="juegos.html" class="nav-link">Juegos</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="ofertas.html" class="nav-link">Ofertas</a>
-                    </li>
-                    <li class="navbar-item active">
                         <a href="Comentarios.html" class="nav-link">Comentarios</a>
                     </li>
                 </ul>
