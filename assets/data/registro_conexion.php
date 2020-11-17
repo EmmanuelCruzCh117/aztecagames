@@ -1,7 +1,7 @@
 <?php
-    include('conexionGlobal.php');
+    include('conexion_global.php');
 
-    $obj = new Conexion;
+    $obj = new ConexionGlobal;
 
     $usuario    = $_POST['newUser'];
     $pass       = $_POST['newPassword'];

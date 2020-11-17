@@ -24,13 +24,10 @@
                         <a href="index.html" class="nav-link">Home</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="login.html" class="nav-link">Login</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="registro.html" class="nav-link">Registrate</a>
-                    </li>
-                    <li class="navbar-item active">
                         <a href="juegos.html" class="nav-link">Juegos</a>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="ofertas.html" class="nav-link">Ofertas</a>
                     </li>
                     <li class="navbar-item active">
                         <a href="Comentarios.html" class="nav-link">Comentarios</a>

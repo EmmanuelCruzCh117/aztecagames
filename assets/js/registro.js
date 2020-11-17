@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     async function mostrarDato() {
         const datos = new FormData(document.getElementById('formulario'));
-        await fetch('assets/data/registro.php', {
+        await fetch('assets/data/registro_conexion.php', {
             method: 'POST',
             body: datos
         })
