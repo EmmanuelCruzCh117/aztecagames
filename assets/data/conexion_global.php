@@ -42,10 +42,10 @@ class ConexionGlobal{
                                              ':mail'=>$correo,
                                              ':dir'=>$direccion,
                                              ':tel'=>$telefono));
-             if($rows == 1){
+             return $rows;
                  echo 'Inserción correcta';
              
-             }
+             
           }
     function registraComentario($nombre, $correo, $telefono, $comentario){
             $con = $this->conectar();
@@ -75,6 +75,7 @@ class ConexionGlobal{
             return $registros;
 
             }
+        
         }
 
 ?>
