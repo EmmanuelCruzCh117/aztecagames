@@ -1,7 +1,7 @@
 <?php
-include('conexion.php');
+include('conexion_global.php');
 
-$obj=new Conexion;
+$obj=new ConexionGlobal;
 
 $res = $obj->buscarProducto();
 echo '<table>
@@ -12,6 +12,7 @@ echo '<table>
                 <th>Precio Venta</th>
                 <th>Precio compra</th>
                 <th>Stock</th>
+                <th>Categoria</th>
                 <th>url imagen</th>
                 </tr>';
 
@@ -23,6 +24,7 @@ echo '<td>' .$filas['descripcion_producto'].'</td>';
 echo '<td>' .$filas['precio_venta'].'</td>';
 echo '<td>'  .$filas['precio_compra'].'</td>';
 echo '<td>' .$filas['stock'].'</td>';
+echo '<td>' .$filas['categoria'].'</td>';
 echo '<td>'  .$filas['url_imag'].'</td>';
 echo '</tr>';
 }
@@ -35,5 +37,6 @@ $tem = $res;
 print("Id producto ".$tem[1]['id_producto'].'<br>');
 print("Nombre ".$tem[1]['nombre_producto'].'<br>');
 print("Precio venta ".$tem[1]['precio_venta'].'<br>');
+print("Categoría videojuego ".$tem[1]['categoria_videojuego']); 
 print("URL imag ".$tem[1]['url_imag'].'<br>');
 ?>
