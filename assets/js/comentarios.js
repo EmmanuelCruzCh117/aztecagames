@@ -18,7 +18,7 @@ $(document).ready(function() {
         const datos = new FormData(document.getElementById('comentarios'));
 
         await fetch('assets/data/comentarios_conexion.php', {
-                method: 'POST',
+                method: 'GET',
                 body: datos
             })
             .then(response => response.json())
