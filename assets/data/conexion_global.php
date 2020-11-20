@@ -64,9 +64,7 @@ class ConexionGlobal{
                                         ':tel'=>$telefono,
                                         ':com'=>$comentario));
 
-                                        if($rows ==1 ){
-                                            
-                                        }
+                                        
 
              return $rows;
              }

@@ -16,6 +16,6 @@
         $datos  = array('dato' => 'no');
     }
 
-
+    
     echo json_encode($datos, JSON_FORCE_OBJECT);
 ?>
