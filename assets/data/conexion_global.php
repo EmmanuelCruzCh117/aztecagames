@@ -34,19 +34,19 @@ class ConexionGlobal{
         }
         
     function registroUsuario($user, $pass, $nombre, $correo, $direccion, $telefono){
+
             $con = $this->conectar();
-             $stmt = $con->prepare('INSERT INTO usuario (usuario, contrasena, nombre, correo, direccion, telefono) VALUES (:user, :pass, :nom, :mail, :dir, :tel)');
+
+             $stmt = $con->prepare('INSERT INTO usuario(id,usuario,contrasena,nombre,correo,direccion,telefono) VALUES (NULL , :user, :pass, :nom, :mail, :dir, :tel)');
              $rows = $stmt->execute(array(':user'=>$user,
                                              ':pass'=>$pass,
                                              ':nom'=>$nombre,
                                              ':mail'=>$correo,
                                              ':dir'=>$direccion,
                                              ':tel'=>$telefono));
-             return $rows;
-                 echo 'Inserción correcta';
-             
-             
+             return $rows;                 
           }
+
     function registraComentario($nombre, $correo, $telefono, $comentario){
             $con = $this->conectar();
              $stmt = $con->prepare('INSERT INTO comentario (nombre, correo, telefono, comentario) VALUES (:nom, :mail, :tel, :com)');

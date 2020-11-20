@@ -30,12 +30,12 @@ body {
 }
 
 .login-box a {
-    color: #FFCA00;
+    color: #fff;
 }
 
 .login-box a:hover {
     text-decoration: none;
-    color: white;
+    color: #FFCA00;
 }
 
 .textbox {

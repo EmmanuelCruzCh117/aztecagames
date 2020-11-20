@@ -1,7 +1,7 @@
 <?php
     include('conexion_registro.php');
 
-    $obj = new Conexion;
+    $obj = new ConexionGlobal;
 
     $nombre     = $_POST['comNombre'];
     $correo     = $_POST['comCorreo'];
