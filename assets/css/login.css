@@ -3,16 +3,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-}
-
-#fondoimg1 {
-    background: url(/assets/img/fondo2.jpg) no-repeat;
-    background-size: cover;
-}
-
-#fondoimg2 {
-    background: url(/assets/img/fondo.jpg) no-repeat;
-    background-size: cover;
+    background: #ee9460;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #11e4d9, #4361ee);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #11e4d9, #4361ee);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .login-box {
@@ -85,12 +81,12 @@ body {
 }
 
 .back a {
-    color: #FFCA00;
+    color: #ffffff;
 }
 
 .back a:hover {
     text-decoration: none;
-    color: #ffffff;
+    color: #f89019;
 }
 
 .btnnew:hover {
