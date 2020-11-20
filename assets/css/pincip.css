@@ -2,14 +2,34 @@
 body {
     background: #ee9460;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, rgb(131, 230, 203), #0edda6);
+    background: -webkit-linear-gradient(to left, rgb(131, 230, 203), #4361ee);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, rgb(131, 230, 203), #0edda6);
+    background: linear-gradient(to left, rgb(131, 230, 203), #4361ee);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .navbar-nav a:hover {
     background-color: #ee9460;
+}
+
+.img-back {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/gtav.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: -55px;
+}
+
+.text-cont {
+    text-align: center;
+    color: white;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.text-cont h1 {
+    font-size: 60px;
 }
 
 .cont {
@@ -29,15 +49,11 @@ body {
     }
 }
 
-img {
-    max-width: 300px;
-    max-height: 300px;
-}
-
 .footer {
     background-color: rgb(53, 52, 52);
     color: white;
     height: auto;
+    padding-top: 30px;
 }
 
 .footer .container-xl i {

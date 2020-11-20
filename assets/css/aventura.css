@@ -2,22 +2,17 @@
 body {
     background: #ee9460;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #270404, #070101);
+    background: -webkit-linear-gradient(to left, #2b9348, #007f5f);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #270404, #070101);
+    background: linear-gradient(to left, #2b9348, #007f5f);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .navbar-nav a:hover {
-    background-color: #ce2b2b;
+    background-color: #ffd23f;
 }
 
-.darki {
-    background-color: black;
-    color: white;
-}
 
-.dari
 /*---------------------*/
 
 .container {
