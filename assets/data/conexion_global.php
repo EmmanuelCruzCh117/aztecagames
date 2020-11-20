@@ -47,20 +47,30 @@ class ConexionGlobal{
              return $rows;                 
           }
 
-    function registraComentario($nombre, $correo, $telefono, $comentario){
+    function registraComentario($nombre, $correo, $telefono, $comentario){                         
             $con = $this->conectar();
-             $stmt = $con->prepare('INSERT INTO comentario (nombre, correo, telefono, comentario) VALUES (:nom, :mail, :tel, :com)');
-             $rows = $stmt->execute(array(':nom'=>$nombre,
-                                             ':mail'=>$correo,
-                                            ':tel'=>$telefono,
-                                            ':com'=>$comentario));
+                                                        
+             $stmt = $con->prepare('INSERT INTO comentario (fecha, 
+                                                            nombre, 
+                                                            correo, 
+                                                            telefono, 
+                                                            comentario) 
+                                    VALUES (NULL ,:nom, :mail, :tel, :com)');
+
+
+
+             $rows = $stmt->execute(array(':nom'=>$nombre,  
+                                        ':mail'=>$correo,
+                                        ':tel'=>$telefono,
+                                        ':com'=>$comentario));
+
+                                        if($rows ==1 ){
+                                            
+                                        }
+
              return $rows;
-                                
-                 echo 'Inserción correcta';
              }
             
-        
-
     function buscarProducto(){
             $con = $this->conectar(); //mandar llamar al metodo de conectar
 
@@ -73,9 +83,7 @@ class ConexionGlobal{
             json_encode($registros, JSON_FORCE_OBJECT);
 
             return $registros;
-
             }
-        
         }
 
 ?>

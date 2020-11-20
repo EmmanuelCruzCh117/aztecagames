@@ -1,5 +1,5 @@
 <?php
-    include('conexion_registro.php');
+    include('conexion_global.php');
 
     $obj = new ConexionGlobal;
 
@@ -14,8 +14,8 @@
         $datos  = array('dato' => 'ok');
     }else{
         $datos  = array('dato' => 'no');
-
     }
-    echo json_encode($datos, JSON_FORCE_OBJECT);
 
+
+    echo json_encode($datos, JSON_FORCE_OBJECT);
 ?>
