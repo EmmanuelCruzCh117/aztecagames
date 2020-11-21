@@ -16,7 +16,7 @@ $(document).ready(function() {
         const datos = new FormData(document.getElementById('login'));
 
         await fetch('assets/data/login_conexion.php', {
-                method: 'GET',
+                method: 'POST',
                 body: datos
             })
             .then(response => response.json())
