@@ -5,13 +5,11 @@ class ConexionGlobal{
     function conectar(){
               $conn = null;
           try{
-
             //   $conn = new PDO('mysql:host=b7b8i4g9sui9ba4htvif-mysql.services.clever-cloud.com;dbname=b7b8i4g9sui9ba4htvif','uqpo5xibxpdhqces','aYFwWXmb9zijSLauAvAy');
               $conn = new PDO('mysql:host=localhost;dbname=aztecagame','root','');
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
               //echo 'Se estableció la conexión <br> <br>';
-
             }catch(PDOException $e){
                 die(print_r('Error conectando a la base de datos:' . $e->getMessage()));
             } 
@@ -58,14 +56,10 @@ class ConexionGlobal{
                                                             comentario) 
                                     VALUES (NULL ,:nom, :mail, :tel, :com)');
 
-
-
              $rows = $stmt->execute(array(':nom'=>$nombre,  
                                         ':mail'=>$correo,
                                         ':tel'=>$telefono,
                                         ':com'=>$comentario));
-
-                                        
 
              return $rows;
              }
