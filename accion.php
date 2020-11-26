@@ -1,3 +1,17 @@
+<?php
+include('assets/data/conexion.php');
+
+$obj=new Conexion;
+
+$res = $obj->buscarProducto();
+
+$tem = array();
+$tem = $res;
+print("Id producto".$tem[1]['id_producto'].'<br>');
+print("Nombre ".$tem[1]['nombre_producto'].'<br>');
+print("Precio venta ".$tem[1]['precio_venta'].'<br>');
+print("URL imag ".$tem[1]['url_imag'].'<br>');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
