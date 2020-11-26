@@ -18,7 +18,7 @@ $(document).ready(function() {
         const datos = new FormData(document.getElementById('register'));
 
         await fetch('assets/data/registro_conexion.php', {
-                method: 'GET',
+                method: 'POST',
                 body: datos
             }).then(response => response.json())
             .then(response => {
