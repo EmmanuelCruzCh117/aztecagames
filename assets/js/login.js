@@ -1,13 +1,17 @@
 $(document).ready(function() {
     $("#btnLogin").click(function(e) {
         e.preventDefault();
-
         var user = $("#inputUser").val().trim();
         var pass = $("#inputPassword").val().trim();
+        if (user === '' || pass == '') {
+            alert("Un campo sigue vacío");
+            return false;
+        } else {
 
-        console.log(user + " " + pass);
+            console.log(user + " - " + pass);
 
-        mostrarDato();
+            mostrarDato();
+        }
 
     });
 
@@ -23,7 +27,7 @@ $(document).ready(function() {
             .then(response => {
                 //console.log(response.datos);
                 if (response.dato == 'ok') {
-                    location.href = "index.php";
+                    location.href = "docs/index1.html";
                 } else {
                     alert("Datos incorrectos :(");
                 }

@@ -1,16 +1,12 @@
 <?php
-include('assets/data/conexion.php');
+include('assets/data/conexion_global.php');
 
-$obj=new Conexion;
+$obj=new ConexionGlobal;
 
 $res = $obj->buscarProducto();
 
 $tem = array();
 $tem = $res;
-print("Id producto".$tem[1]['id_producto'].'<br>');
-print("Nombre ".$tem[1]['nombre_producto'].'<br>');
-print("Precio venta ".$tem[1]['precio_venta'].'<br>');
-print("URL imag ".$tem[1]['url_imag'].'<br>');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,10 +18,11 @@ print("URL imag ".$tem[1]['url_imag'].'<br>');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Juegos</title>
+    
 </head>
 
 <body>
-    <header class="navbar-light bg-light">
+<header class="navbar-light bg-light">
         <div class="container-xl">
             <nav class="navbar navbar-expand-lg">
                 <a href="index.html" class="navbar-brand text-black mr-auto">
@@ -42,13 +39,16 @@ print("URL imag ".$tem[1]['url_imag'].'<br>');
                         <a href="registro.html" class="nav-link">Registrate</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="juegos.html" class="nav-link">Juegos</a>
+                        <a href="juegos.php" class="nav-link">Juegos</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="consolas.html" class="nav-link">Consolas</a>
+                        <a href="consolas.php" class="nav-link">Consolas</a>
                     </li>
                     <li class="navbar-item active">
                         <a href="Comentarios.html" class="nav-link">Comentarios</a>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="carrito.php" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                 </ul>
             </nav>
@@ -60,104 +60,96 @@ print("URL imag ".$tem[1]['url_imag'].'<br>');
             <nav class="navbar navbar-expand-lg">
                 <ul class="navbar-nav">
                     <li class="navbar-item active">
-                        <a href="juegos.html" class="nav-link">Horror</a>
+                        <a href="juegos.php" class="nav-link">Horror</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="accion.html" class="nav-link">Acción</a>
+                        <a href="accion.php" class="nav-link">Acción</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="puzzle.html" class="nav-link">Puzzles</a>
+                        <a href="puzzle.php" class="nav-link">Puzzles</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="aventura.html" class="nav-link">Aventura</a>
+                        <a href="aventura.php" class="nav-link">Aventura</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="royal.html" class="nav-link">Battle Royal</a>
+                        <a href="royal.php" class="nav-link">Battle Royal</a>
                     </li>
-
                 </ul>
             </nav>
         </div>
     </div>
 
     <div class="container marketing">
-        <h1>Acción</h1><br>
+        <?php echo '<h1 style= color:#fff;><strong>'.$tem[0]['categoria'].'</strong></h1>';?><br>
         <hr class="featurette-divider">
-
         <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">Halo 2</h2>
-                <p class="lead">Halo 2 es un videojuego de disparos en primera persona desarrollado por Bungie Studios y lanzado para la consola Xbox en 2004.​ Es la segunda entrega en la franquicia de Halo y su trama continúa los sucesos relatados en Halo: Combat Evolved.
-                </p>
-                <h5 style="color: white;">$10,000</h5>
-                <p><a class="btn btn-secondary" style="background-color: #ff5100; border: none;" href="#" role="button">Comprar &raquo;</a></p>
-            </div>
-            <div class="col-md-5"><br><br><br>
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/halocaratula.png">
-            </div>
+        <div class="col-md-7">
+        <?php echo '<h2 style= color:#fff; class="featurette-heading">'.$tem[0]['nombre_producto'].'</h2>';?>
+        <?php echo '<strong>'.$tem[0]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[0]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[0]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
+        </div>
         </div>
 
 
         <hr class="featurette-divider">
         <div class="row featurette">
-
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">CiberPunk 2077</h2>
-                <p class="lead">Cyberpunk 2077 es un futuro videojuego desarrollado y publicado por CD Projekt, que se lanzará para Microsoft Windows, PlayStation 4 y Xbox One el 10 de diciembre de 2020, y posteriormente en PlayStation 5, Xbox Series X|S y Google Stadia.
-                </p>
-                <h5 style="color: white;">$10,000 MXN</h5>
-                <p><a class="btn btn-secondary" style="background-color: #ff5100; border: none;" href="#" role="button">Comprar &raquo;</a></p>
-            </div>
-            <div class="col-md-5 order-md-1"><br><br><br>
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/ciberpunkcaratula.jpg">
+        <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">
+        <?php echo '<strong style= color:#fff;>'.$tem[1]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[1]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[1]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[1]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
             </div>
         </div>
+
 
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">GTA V</h2>
-                <p class="lead">Grand Theft Auto V es un videojuego de acción-aventura de mundo abierto desarrollado por el estudio Rockstar North y distribuido por Rockstar Games. Fue lanzado el 17 de septiembre de 2013 para las consolas PlayStation 3 y Xbox 360.​</p>
-                <h5 style="color: white;">$10,000 MXN</h5>
-                <p><a class="btn btn-secondary" style="background-color: #ff5100; border: none;" href="#" role="button">Comprar &raquo;</a></p>
-            </div>
-            <div class="col-md-5">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/gtavcaratula.jpg">
+            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[2]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[2]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[2]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[2]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
             </div>
         </div>
 
         <hr class="featurette-divider">
-
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Call Of Duty Cold War</h2>
-                <p class="lead">Call of Duty: Black Ops Cold War es un videojuego de disparos en primera persona desarrollado por Treyarch y Raven Software y publicado por Activision. Es la quinta entrega de la serie Black Ops y el decimoséptimo Call of Duty. El juego
-                    fue lanzado el 13 de noviembre de 2020.</p>
-                <h5 style="color: white;">$10,000 MXN</h5>
-                <p><a class="btn btn-secondary" style="background-color: #ff5100; border: none;" href="#" role="button">Comprar &raquo;</a></p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/coldcaratula.jpg">
-            </div>
+            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[3]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[3]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[3]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[3]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
+        </div>
         </div>
 
 
         <hr class="featurette-divider">
-
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">Red Dead Redemption 2</h2>
-                <p class="lead">Red Dead Redemption 2 es un videojuego de acción-aventura western, en un mundo abierto y en perspectiva de primera y tercera persona, ​ con componentes para un jugador y multijugador.​ Fue desarrollado por Rockstar Games. Es la precuela
-                    de Red Dead Redemption y el tercer juego de la saga Red Dead.</p>
-
-                <h5 style="color: white;">$10,000 MXN</h5>
-                <p><a class="btn btn-secondary" style="background-color: #ff5100; border: none;" href="#" role="button">Comprar &raquo;</a></p>
-            </div>
-            <div class="col-md-5"><br><br><br>
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/redcaratula.jpg">
-            </div>
+            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[4]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[4]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[4]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[4]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
         </div>
     </div>
+</div>
     <footer class="footer bg-dark">
 
         <div class="container-xl">

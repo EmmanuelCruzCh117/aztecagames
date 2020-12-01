@@ -31,12 +31,3 @@ echo '</tr>';
 echo'</table>';
 
 json_encode($res,JSON_FORCE_OBJECT);
-//print_r($res);
-$tem = array();
-$tem = $res;
-print("Id producto ".$tem[1]['id_producto'].'<br>');
-print("Nombre ".$tem[1]['nombre_producto'].'<br>');
-print("Precio venta ".$tem[1]['precio_venta'].'<br>');
-print("Categoría videojuego ".$tem[1]['categoria_videojuego']); 
-print("URL imag ".$tem[1]['url_imag'].'<br>');
-?>

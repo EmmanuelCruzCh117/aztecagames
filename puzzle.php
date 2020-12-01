@@ -1,3 +1,13 @@
+<?php
+include('assets/data/conexion_global.php');
+
+$obj=new ConexionGlobal;
+
+$res = $obj->buscarProducto();
+
+$tem = array();
+$tem = $res;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,104 +54,96 @@
         <div class="container-xl">
             <nav class="navbar navbar-expand-lg">
                 <ul class="navbar-nav">
-                    <li class="navbar-item active">
-                        <a href="juegos.html" class="nav-link">Horror</a>
+                <li class="navbar-item active">
+                        <a href="juegos.php" class="nav-link">Horror</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="accion.html" class="nav-link">Acción</a>
+                        <a href="accion.php" class="nav-link">Acción</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="puzzle.html" class="nav-link">Puzzles</a>
+                        <a href="puzzle.php" class="nav-link">Puzzles</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="aventura.html" class="nav-link">Aventura</a>
+                        <a href="aventura.php" class="nav-link">Aventura</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="royal.html" class="nav-link">Battle Royal</a>
+                        <a href="royal.php" class="nav-link">Battle Royal</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </div>
     <div class="container marketing">
-        <h1 style="color: white;">Puzzles</h1><br>
+        <?php echo '<h1 style= color:#fff;><strong>'.$tem[10]['categoria'].'</strong></h1>';?><br>
         <hr class="featurette-divider">
-
         <div class="row featurette">
-            <div style="color: white;" class="col-md-7">
-                <h2 class="featurette-heading">LIMBO</h2>
-                <p class="lead">Limbo es un videojuego de lógica y plataformas desarrollado por la compañía independiente danesa Playdead y estrenado en 2010 para Xbox Live Arcade. La trama describe las vivencias de un niño mientras busca a su hermana en un entorno siniestro.
-                </p>
-                <h5 style="color: white;">$70 MNX</h5>
-                <p><a class="btn btn-secondary" style="background-color: #ffbc42; border: none;" href="#" role="button">COMPRAR &raquo;</a></p>
-            </div>
-            <div class="col-md-5"><br><br><br>
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="350" height="350" src="assets/img/LIMBO.jpg">
-            </div>
+        <div class="col-md-7">
+        <?php echo '<h2 style= color:#fff; class="featurette-heading">'.$tem[10]['nombre_producto'].'</h2>';?>
+        <?php echo '<strong style= color:#fff;>'.$tem[10]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[10]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[10]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
+        </div>
         </div>
 
-        <hr class="featurette-divider">
 
+        <hr class="featurette-divider">
         <div class="row featurette">
-            <div style="color: white;" class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Bridge Constructor Portal</h2>
-                <p class="lead">Bridge Constructor Portal es un videojuego de simulación de ingeniería y rompecabezas desarrollado por ClockStone Software y publicado por Headup Games. El juego es parte de la serie de videojuegos Bridge Constructor, con la incorporación
-                    de elementos de la Serie Portal</p>
-                <h5 style="color: white;">$469 MNX</h5>
-                <p><a class="btn btn-secondary" style="background-color: #ffbc42; border: none;" href="#" role="button">Ver más &raquo;</a></p>
-            </div>
-            <div class="col-md-5 order-md-1"><br><br><br>
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/portal.jpg">
-            </div>
+        <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">
+        <?php echo '<strong style= color:#fff;>'.$tem[11]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong style= color:#fff;>'.$tem[11]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[11]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
         </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div style="color: white;" class="col-md-7">
-                <h2 class="featurette-heading">World of Goo</h2>
-                <p class="lead">World of Goo es un videojuego de lógica, con un fuerte énfasis en la física, publicado para la consola Wii y Nintendo Switch, y para los tres principales sistemas operativos de PC: Windows, Mac OS X y Linux y android</p>
-                <h5 style="color: white;">$69 MNX</h5>
-                <p><a class="btn btn-secondary" style="background-color: #ffbc42; border: none;" href="#" role="button">Ver más &raquo;</a></p>
-            </div>
-            <div class="col-md-5">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/World.jpg">
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[11]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
             </div>
         </div>
 
 
         <hr class="featurette-divider">
-
         <div class="row featurette">
-            <div style="color: white;" class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Q.U.B.E. 2</h2>
-                <p class="lead">Q.U.B.E. 2 es la secuela del Q.U.B.E, el exitoso juego de rompecabezas en primera persona. Juega como Amelia Cross, una arqueóloga atrapada en un mundo misterioso, y resuelve puzles para encontrar el camino de vuelta a casa.</p>
-                <h5 style="color: white;">$600 MNX</h5>
-                <p><a class="btn btn-secondary" style="background-color: #ffbc42; border: none;" href="#" role="button">Ver más &raquo;</a></p>
+            <div class="col-md-7">
+            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[12]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong style= color:#fff;>'.$tem[12]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[12]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[12]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
             </div>
-            <div class="col-md-5 order-md-1">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="350" height="350" src="assets/img/qube2.jpg">
-            </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[13]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong style= color:#fff;>'.$tem[13]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[13]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[13]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
+        </div>
         </div>
 
 
         <hr class="featurette-divider">
-
         <div class="row featurette">
-            <div style="color: white;" class="col-md-7">
-                <h2 class="featurette-heading">Vessel</h2>
-                <p class="lead">Juego de puzles y plataformas bidimensional en el que debemos controlar diversas corrientes de fluidos y a unos seres acuosos, conocidos como Fluros, a través de una gran variedad de rompecabezas ambientados en entornos como fábricas,
-                    zonas de cultivo o minas</p>
-                <h5 style="color: white;">$100 MNX</h5>
-                <p><a class="btn btn-secondary" style="background-color: #ffbc42; border: none;" href="#" role="button">Ver más &raquo;</a></p>
-            </div>
-            <div class="col-md-5"><br><br><br>
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/vessel.jpg">
-            </div>
+            <div class="col-md-7">
+            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[14]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong style= color:#fff;>'.$tem[14]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[14]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
         </div>
-
-        <!-- /END THE FEATURETTES -->
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[14]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
+        </div>
     </div>
+</div>
     <footer class="footer bg-dark">
 
         <div class="container-xl">

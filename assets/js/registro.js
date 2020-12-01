@@ -9,9 +9,15 @@ $(document).ready(function() {
         var tel = $("#newPhone").val().trim();
         var name = $("#newNombre").val().trim();
 
-        console.log(user + " " + pass + " " + email + " " + addres + " " + tel + " " + name);
+        if (user === '' || pass === '' || email == '' || tel == '' || addres == '' || name == '') {
+            alert("Un campo sigue vacío");
+            return false;
+        } else {
 
-        registrarDato();
+            console.log(user + " " + pass + " " + email + " " + addres + " " + tel + " " + name);
+
+            registrarDato();
+        }
     });
 
     async function registrarDato() {

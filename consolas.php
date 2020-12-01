@@ -13,7 +13,7 @@ $tem = $res;
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/royal.css">
+    <link rel="stylesheet" href="assets/css/consola.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos</title>
@@ -49,44 +49,18 @@ $tem = $res;
             </nav>
         </div>
     </header>
-
-    <div class="navbar-dark bg-dark">
-        <div class="container-xl">
-            <nav class="navbar navbar-expand-lg">
-                <ul class="navbar-nav">
-                <li class="navbar-item active">
-                        <a href="juegos.php" class="nav-link">Horror</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="accion.php" class="nav-link">Acción</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="puzzle.php" class="nav-link">Puzzles</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="aventura.php" class="nav-link">Aventura</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="royal.php" class="nav-link">Battle Royal</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-
     <div class="container marketing">
-        <br><br>
-        <?php echo '<h1><strong>'.$tem[20]['categoria'].'</strong></h1>';?><br>
+        <?php echo '<h1 style= color:#fff;><strong>'.$tem[25]['categoria'].'</strong></h1>';?><br>
         <hr class="featurette-divider">
         <div class="row featurette">
         <div class="col-md-7">
-        <?php echo '<h2 class="featurette-heading">'.$tem[20]['nombre_producto'].'</h2>';?>
-        <?php echo '<strong>'.$tem[20]['descripcion_producto'].'</strong>';?>
-        <?php echo '<h5>$'.$tem[20]['precio_venta'].' </h5>';?>
+        <?php echo '<h2 style= color:#fff; class="featurette-heading">'.$tem[25]['nombre_producto'].'</h2>';?>
+        <?php echo '<strong>'.$tem[25]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[25]['precio_venta'].' </h5>';?>
         <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
         </div>
         <div class="col-md-5"><br><br><br>
-        <?php echo '<img src='.$tem[20]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
+        <?php echo '<img src='.$tem[25]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
         </div>
         </div>
 
@@ -95,13 +69,13 @@ $tem = $res;
         <div class="row featurette">
         <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading">
-        <?php echo '<strong>'.$tem[21]['nombre_producto'].'</strong>';?></h2>
-        <?php echo '<strong>'.$tem[21]['descripcion_producto'].'</strong>';?>
-        <?php echo '<h5>$'.$tem[21]['precio_venta'].' </h5>';?>
+        <?php echo '<strong style= color:#fff;>'.$tem[26]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[26]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[26]['precio_venta'].' </h5>';?>
         <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
         </div>
         <div class="col-md-5"><br><br><br>
-        <?php echo '<img src='.$tem[21]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
+        <?php echo '<img src='.$tem[26]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
             </div>
         </div>
 
@@ -109,43 +83,16 @@ $tem = $res;
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-7">
-            <h2 class="featurette-heading"><?php echo '<strong>'.$tem[22]['nombre_producto'].'</strong>';?></h2>
-        <?php echo '<strong>'.$tem[22]['descripcion_producto'].'</strong>';?>
-        <?php echo '<h5>$'.$tem[22]['precio_venta'].' </h5>';?>
+            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[27]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[27]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[27]['precio_venta'].' </h5>';?>
         <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
         </div>
         <div class="col-md-5"><br><br><br>
-        <?php echo '<img src='.$tem[22]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
+        <?php echo '<img src='.$tem[27]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
             </div>
         </div>
 
-        <hr class="featurette-divider">
-        <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading"><?php echo '<strong>'.$tem[23]['nombre_producto'].'</strong>';?></h2>
-        <?php echo '<strong>'.$tem[23]['descripcion_producto'].'</strong>';?>
-        <?php echo '<h5>$'.$tem[23]['precio_venta'].' </h5>';?>
-        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
-        </div>
-        <div class="col-md-5"><br><br><br>
-        <?php echo '<img src='.$tem[23]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
-        </div>
-        </div>
-
-
-        <hr class="featurette-divider">
-        <div class="row featurette">
-            <div class="col-md-7">
-            <h2 class="featurette-heading"><?php echo '<strong>'.$tem[24]['nombre_producto'].'</strong>';?></h2>
-        <?php echo '<strong>'.$tem[24]['descripcion_producto'].'</strong>';?>
-        <?php echo '<h5>$'.$tem[24]['precio_venta'].' </h5>';?>
-        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
-        </div>
-        <div class="col-md-5"><br><br><br>
-        <?php echo '<img src='.$tem[24]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
-        </div>
-    </div>
-</div>
     <footer class="footer bg-dark">
 
         <div class="container-xl">
@@ -167,6 +114,5 @@ $tem = $res;
 <script>
     window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')
 </script>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

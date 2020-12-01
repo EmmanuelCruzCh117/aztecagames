@@ -99,10 +99,10 @@
             <h1 class="title">Déjanos tu opinión</h1>
             <h2 class="subtitle">Nos encantaría escucharte :D</h2>
             <form id="comentarios" method="POST">
-                <input type="text" id="comNombre" name="comNombre" placeholder="Nombre">
-                <input type="email" id="comCorreo" name="comCorreo" placeholder="Correo">
-                <input type="tel" id="comTelefono" name="comTelefono" placeholder="Teléfono">
-                <textarea name="comComentario" id="comComentario" rows="5" placeholder="Comentario"></textarea>
+                <input type="text" id="comNombre" name="comNombre" placeholder="Nombre" required/>
+                <input type="email" id="comCorreo" name="comCorreo" placeholder="Correo" required/>
+                <input type="tel" id="comTelefono" name="comTelefono" placeholder="Teléfono" required/>
+                <textarea name="comComentario" id="comComentario" rows="5" placeholder="Comentario" required></textarea>
                 <button id="btnComentarios" class="btn-send">Enviar</button>
             </form>
         </div>

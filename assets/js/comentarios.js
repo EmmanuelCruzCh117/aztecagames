@@ -7,9 +7,14 @@ $(document).ready(function() {
         var tel = $("#comTelefono").val().trim();
         var msg = $("#comComentario").val().trim();
 
-        console.log(name + " " + email + " " + tel + " " + msg);
+        if (name === '' || msg == '' || email == '' || tel == '') {
+            alert("Un campo sigue vacío");
+            return false;
+        } else {
+            console.log(name + " " + email + " " + tel + " " + msg);
 
-        registrarComentario();
+            registrarComentario();
+        }
 
     });
 
@@ -23,9 +28,8 @@ $(document).ready(function() {
             })
             .then(response => response.json())
             .then(response => {
-                //console.log(response.datos);
                 if (response.dato == 'ok') {
-                    location.href = "comentarios.html";
+                    location.href = "Comentarios.html";
                 } else {
                     alert("Datos no validos, revisa tu información");
                 }
@@ -35,10 +39,3 @@ $(document).ready(function() {
             });
     }
 });
-
-/*var nom = $("#comNombre").val().trim();
-var email = $("#comCorreo").val().trim();
-var tel = $("#comTelefono").val().trim();
-var com = $("#comComentario").val().trim();
-
-console.log(nom + " " + email + " " + tel + " " + com);*/

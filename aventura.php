@@ -1,3 +1,14 @@
+<?php
+include('assets/data/conexion_global.php');
+
+$obj=new ConexionGlobal;
+
+$res = $obj->buscarProducto();
+
+$tem = array();
+$tem = $res;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,10 +38,10 @@
                         <a href="registro.html" class="nav-link">Registrate</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="juegos.html" class="nav-link">Juegos</a>
+                        <a href="juegos.php" class="nav-link">Juegos</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="consolas.html" class="nav-link">Consolas</a>
+                        <a href="consolas.php" class="nav-link">Consolas</a>
                     </li>
                     <li class="navbar-item active">
                         <a href="Comentarios.html" class="nav-link">Comentarios</a>
@@ -45,99 +56,97 @@
             <nav class="navbar navbar-expand-lg">
                 <ul class="navbar-nav">
                     <li class="navbar-item active">
-                        <a href="juegos.html" class="nav-link">Horror</a>
+                        <a href="juegos.php" class="nav-link">Horror</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="accion.html" class="nav-link">Acción</a>
+                        <a href="accion.php" class="nav-link">Acción</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="puzzle.html" class="nav-link">Puzzles</a>
+                        <a href="puzzle.php" class="nav-link">Puzzles</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="aventura.html" class="nav-link">Aventura</a>
+                        <a href="aventura.php" class="nav-link">Aventura</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="royal.html" class="nav-link">Battle Royal</a>
+                        <a href="royal.php" class="nav-link">Battle Royal</a>
                     </li>
-
                 </ul>
             </nav>
         </div>
     </div>
 
+    
     <div class="container marketing">
-        <h1 style="color: white;">Aventura</h1><br>
+        <?php echo '<h1 style= color:#fff;><strong>'.$tem[15]['categoria'].'</strong></h1>';?><br>
         <hr class="featurette-divider">
-        <div style="color: white;" class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">The Last Of Us 2</h2>
-                <p class="lead">The Last of Us Part II es un videojuego de acción-aventura y horror de supervivencia desarrollado por Naughty Dog, publicado por Sony en exclusiva para la PlayStation 4 el 19 de junio de 2020.</p>
-                <h5 style="color: white;">$10,000</h5>
-                <p><a class="btn btn-secondary" style="background-color: #0d3b66 ; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        <div class="row featurette">
+        <div class="col-md-7">
+        <?php echo '<h2 style= color:#fff; class="featurette-heading">'.$tem[15]['nombre_producto'].'</h2>';?>
+        <?php echo '<strong>'.$tem[15]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[15]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[15]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
+        </div>
+        </div>
+
+
+        <hr class="featurette-divider">
+        <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">
+        <?php echo '<strong style= color:#fff;>'.$tem[16]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[16]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[16]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[16]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
             </div>
-            <div class="col-md-5"><br><br><br>
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/ofuscaratula.jpg">
+        </div>
+
+
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-7">
+            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[17]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[17]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[17]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[17]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
             </div>
         </div>
 
         <hr class="featurette-divider">
         <div class="row featurette">
-            <div style="color: white;" class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Minecraft</h2>
-                <p class="lead">Minecraft es un videojuego de construcción, de tipo «mundo abierto» o sandbox creado originalmente por el sueco Markus Persson, ​ y posteriormente desarrollado por su empresa, Mojang Studios.</p>
-                <h5 style="color: white;">$10,000</h5>
-                <p><a class="btn btn-secondary" style="background-color: #0d3b66 ; border: none;" href="#" role="button">Comprar &raquo;</a></p>
-            </div>
-            <div class="col-md-5 order-md-1"><br><br><br>
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/minecaratula.jpg">
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-        <div style="color: white;" class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">Death Stranding</h2>
-                <p class="lead">Death Stranding es un videojuego de acción y exploración en mundo abierto desarrollado por Kojima Productions y publicado por Sony Interactive Entertainment para PlayStation 4 y por 505 Games para Microsoft Windows.</p>
-                <h5 style="color: white;">$10,000</h5>
-                <p><a class="btn btn-secondary" style="background-color: #0d3b66 ; border: none;" href="#" role="button">Comprar &raquo;</a></p>
-            </div>
-            <div class="col-md-5">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/strandingcaratula.jpg">
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div style="color: white;" class="row featurette">
             <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Assassin's Creed: Valhalla</h2>
-                <p class="lead">Assassin's Creed Valhalla es un videojuego desarrollado por Ubisoft Montreal y publicado por Ubisoft. Es el decimosegundo en importancia y el vigesimosegundo lanzado dentro de la saga de Assassin Creed, y sucesor al juego del 2018 Assassin's
-                    Creed Odyssey.</p>
-                <h5 style="color: white;">$10,000</h5>
-                <p><a class="btn btn-secondary" style="background-color: #0d3b66 ; border: none;" href="#" role="button">Comprar &raquo;</a></p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/creedcaratula.jfif">
-            </div>
+            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[18]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[18]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[18]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[18]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
+        </div>
         </div>
 
 
         <hr class="featurette-divider">
-
-        <div style="color: white;" class="row featurette">
+        <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">Tomb Raider</h2>
-                <p class="lead">Tomb Raider es un videojuego de acción-aventura desarrollado por Crystal Dynamics y distribuido por Square Enix. Es el décimo título de la serie Tomb Raider y el quinto título desarrollado por Crystal Dynamics. El juego es un reinicio
-                    de la serie y cuenta los orígenes de la protagonista de la serie, Lara Croft.​​</p>
-                <h5 style="color: white;">$10,000</h5>
-                <p><a class="btn btn-secondary" style="background-color: #0d3b66 ; border: none;" href="#" role="button">Comprar &raquo;</a></p>
-            </div>
-            <div class="col-md-5"><br><br><br>
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/raidercaratula.jpg">
-            </div>
+            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[19]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[19]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[19]['precio_venta'].' </h5>';?>
+        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[19]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
         </div>
     </div>
-
+</div>
     <footer class="footer bg-dark">
 
         <div class="container-xl">

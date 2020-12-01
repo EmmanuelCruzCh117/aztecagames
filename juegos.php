@@ -1,3 +1,14 @@
+<?php
+include 'assets/data/conexion_global.php';
+include 'assets/data/Car/Configuracion.php';
+
+$obj=new ConexionGlobal;
+
+$res = $obj->buscarProducto();
+
+$tem = array();
+$tem = $res;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +16,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/juegos.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos</title>
 </head>
@@ -65,80 +79,85 @@
     </div>
 
     <div class="container marketing">
-        <br> <br> <br>
-        <h1 style="color: white;">Horror</h1><br>
-        <hr style="background-color: white;" class="featurette-divider">
+        <?php echo '<h1><strong>'.$tem[5]['categoria'].'</strong></h1>';?><br>
+        <hr class="featurette-divider">
         <div class="row featurette">
-            <div style="color: white;" class="col-md-7">
-                <h2 class="featurette-heading">Dead Space 2</h2>
-                <p class="lead">Dead Space 2 es un videojuego de Horror de supervivencia en tercera persona, secuela de Dead Space, desarrollado por Visceral Games y publicado por Electronic Arts para Xbox 360, PC y PlayStation 3.</p>
-                <h5>$10,000</h5>
-                <p><a class="btn btn-secondary" style="background-color: red;" href="#" role="button">Comprar &raquo;</a></p>
-            </div>
-            <div class="col-md-5"><br><br><br>
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/spacecaratula.png">
-            </div>
+        <div class="col-md-7">
+        <?php echo '<h2 class="featurette-heading">'.$tem[5]['nombre_producto'].'</h2>';?>
+        <?php echo '<strong>'.$tem[5]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[5]['precio_venta'].' </h5>';?>
+        <div class="col-md-6">
+            <a class="btn btn-success" href="assets/data/Car/AccionCarta.php?action=addToCart&id=<?php echo $tem[5]["Id"]; ?>">Agregar a la Carta</a>
+        </div>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[5]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
+        </div>
         </div>
 
-        <hr style="background-color: white;" class="featurette-divider">
-        <div class="row featurette">
-            <div style="color: white;" class="col-md-7 order-md-2">
 
-                <h2 class="featurette-heading">Resident Evil 7</h2>
-                <p class="lead">Resident Evil 7: Biohazard, conocido originalmente en Japón como Biohazard 7: Resident Evil es un videojuego perteneciente al género de horror de supervivencia, desarrollado y publicado por Capcom.</p>
-                <h5 style="color: white;">$10,000</h5>
-                <p><a class="btn btn-secondary" style="background-color: red;" href="#" role="button">Comprar &raquo;</a></p>
-            </div>
-            <div class="col-md-5 order-md-1"><br><br><br>
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/evilcaratula.jpg">
-            </div>
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading"><?php echo '<strong>'.$tem[6]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[6]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[6]['precio_venta'].' </h5>';?>
+        <div class="col-md-6">
+            <a class="btn btn-success" href="assets/data/Car/AccionCarta.php?action=addToCart&id=<?php echo $tem[6]["Id"]; ?>">Agregar a la Carta</a>
         </div>
-
-        <hr style="background-color: white;" class="featurette-divider">
-        <div class="row featurette">
-            <div style="color: white;" class="col-md-7">
-                <h2 class="featurette-heading">Until Dawn</h2>
-                <p class="lead">Until Dawn es un juego narrativo perteneciente a los géneros horror de supervivencia y Drama Interactivo desarrollado por Supermassive Games y publicado por Sony Computer Entertainment, para PlayStation 4.</p>
-                <h5 style="color: white;">$10,000</h5>
-                <p><a class="btn btn-secondary" style="background-color: red;" href="#" role="button">Comprar &raquo;</a></p>
-            </div>
-            <div class="col-md-5">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/untilcaratula.jpg">
-            </div>
         </div>
-
-        <hr style="background-color: white;" class="featurette-divider">
-
-        <div class="row featurette">
-            <div style="color: white;" class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">The Evil Within</h2>
-                <p class="lead">The Evil Within, conocido en Japón como Psycho Break es un videojuego perteneciente al género de Horror de supervivencia en tercera persona el cual fue desarrollado por el estudio Tango Gameworks y publicado por la empresa Bethesda Softworks.
-                </p>
-                <h5 style="color: white;">$10,000</h5>
-                <p><a class="btn btn-secondary" style="background-color: red;" href="#" role="button">Comprar &raquo;</a></p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/evilcaratula.jpg">
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[6]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
             </div>
         </div>
 
 
-        <hr style="background-color: white;" class="featurette-divider">
-
+        <hr class="featurette-divider">
         <div class="row featurette">
-            <div style="color: white;" class="col-md-7">
-                <h2 class="featurette-heading">Otulast</h2>
-                <p class="lead">Outlast es un videojuego de horror de supervivencia en primera persona desarrollado y publicado por Red Barrels Inc, una compañía fundada por antiguos miembros del equipo de desarrolladores de otros juegos como Prince of Persia, Assassin's
-                    Creed, Splinter Cell y Uncharted.</p>
-                <h5 style="color: white;">$10,000</h5>
-                <p><a class="btn btn-secondary" style="background-color: red;" href="#" role="button">Comprar &raquo;</a></p>
+            <div class="col-md-7">
+            <h2 class="featurette-heading"><?php echo '<strong>'.$tem[7]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[7]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[7]['precio_venta'].' </h5>';?>
+        <div class="col-md-6">
+            <a class="btn btn-success" href="assets/data/Car/AccionCarta.php?action=addToCart&id=<?php echo $tem[7]["Id"]; ?>">Agregar a la Carta</a>
+        </div>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[7]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
             </div>
-            <div class="col-md-5"><br><br><br>
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto" width="250" height="250" src="assets/img/outlastcaratula.png">
-            </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading"><?php echo '<strong>'.$tem[8]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[8]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[8]['precio_venta'].' </h5>';?>
+        <div class="col-md-6">
+            <a class="btn btn-success" href="assets/data/Car/AccionCarta.php?action=addToCart&id=<?php echo $tem[8]["Id"]; ?>">Agregar a la Carta</a>
+        </div>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[8]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
+        </div>
+        </div>
+
+
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-7">
+            <h2 class="featurette-heading"><?php echo '<strong>'.$tem[9]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong>'.$tem[9]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[9]['precio_venta'].' </h5>';?>
+        <div class="col-md-6">
+            <a class="btn btn-success" href="assets/data/Car/AccionCarta.php?action=addToCart&id=<?php echo $tem[9]["Id"]; ?>">Agregar a la Carta</a>
+        </div>
+        </div>
+        <div class="col-md-5"><br><br><br>
+        <?php echo '<img src='.$tem[9]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
         </div>
     </div>
-
+</div>
     <footer class="footer bg-dark">
 
         <div class="container-xl">
