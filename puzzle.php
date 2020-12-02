@@ -1,5 +1,6 @@
 <?php
-include('assets/data/conexion_global.php');
+include 'assets/data/conexion_global.php';
+include 'Configuracion.php';
 
 $obj=new ConexionGlobal;
 
@@ -15,6 +16,8 @@ $tem = $res;
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/puzzle.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos</title>
 </head>
@@ -37,13 +40,16 @@ $tem = $res;
                         <a href="registro.html" class="nav-link">Registrate</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="juegos.html" class="nav-link">Juegos</a>
+                        <a href="juegos.php" class="nav-link">Juegos</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="consolas.html" class="nav-link">Consolas</a>
+                        <a href="consolas.php" class="nav-link">Consolas</a>
                     </li>
                     <li class="navbar-item active">
                         <a href="Comentarios.html" class="nav-link">Comentarios</a>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="VerCarta.php" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                 </ul>
             </nav>
@@ -54,7 +60,7 @@ $tem = $res;
         <div class="container-xl">
             <nav class="navbar navbar-expand-lg">
                 <ul class="navbar-nav">
-                <li class="navbar-item active">
+                    <li class="navbar-item active">
                         <a href="juegos.php" class="nav-link">Horror</a>
                     </li>
                     <li class="navbar-item active">
@@ -73,15 +79,18 @@ $tem = $res;
             </nav>
         </div>
     </div>
+
     <div class="container marketing">
-        <?php echo '<h1 style= color:#fff;><strong>'.$tem[10]['categoria'].'</strong></h1>';?><br>
+        <?php echo '<h1 style><strong style= color:#fff;>'.$tem[10]['categoria'].'</strong></h1>';?><br>
         <hr class="featurette-divider">
         <div class="row featurette">
         <div class="col-md-7">
-        <?php echo '<h2 style= color:#fff; class="featurette-heading">'.$tem[10]['nombre_producto'].'</h2>';?>
-        <?php echo '<strong style= color:#fff;>'.$tem[10]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h2 style="color: white"; class="featurette-heading">'.$tem[10]['nombre_producto'].'</h2>';?>
+        <?php echo '<strong style="color: white"; >'.$tem[10]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:#fff;>$'.$tem[10]['precio_venta'].' </h5>';?>
-        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        <div class="text-center">
+            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[5]["Id"]; ?>">Agregar a la Carta</a></p>
+        </div>
         </div>
         <div class="col-md-5"><br><br><br>
         <?php echo '<img src='.$tem[10]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
@@ -91,12 +100,13 @@ $tem = $res;
 
         <hr class="featurette-divider">
         <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">
-        <?php echo '<strong style= color:#fff;>'.$tem[11]['nombre_producto'].'</strong>';?></h2>
-        <?php echo '<strong style= color:#fff;>'.$tem[11]['descripcion_producto'].'</strong>';?>
+            <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading" style="color: white"><?php echo '<strong>'.$tem[11]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong style="color: white">'.$tem[11]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:#fff;>$'.$tem[11]['precio_venta'].' </h5>';?>
-        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        <div class="text-center">
+            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[6]["Id"]; ?>">Agregar a la Carta</a></p>
+        </div>
         </div>
         <div class="col-md-5"><br><br><br>
         <?php echo '<img src='.$tem[11]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
@@ -107,10 +117,12 @@ $tem = $res;
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-7">
-            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[12]['nombre_producto'].'</strong>';?></h2>
+            <h2 class="featurette-heading" style="color: white"><?php echo '<strong>'.$tem[12]['nombre_producto'].'</strong>';?></h2>
         <?php echo '<strong style= color:#fff;>'.$tem[12]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:#fff;>$'.$tem[12]['precio_venta'].' </h5>';?>
-        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        <div class="text-center">
+           <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[7]["Id"]; ?>">Agregar a la Carta</a></p> 
+        </div>
         </div>
         <div class="col-md-5"><br><br><br>
         <?php echo '<img src='.$tem[12]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
@@ -120,10 +132,12 @@ $tem = $res;
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[13]['nombre_producto'].'</strong>';?></h2>
-        <?php echo '<strong style= color:#fff;>'.$tem[13]['descripcion_producto'].'</strong>';?>
+            <h2 class="featurette-heading" style="color: white"><?php echo '<strong>'.$tem[13]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong style="color: white">'.$tem[13]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:#fff;>$'.$tem[13]['precio_venta'].' </h5>';?>
-        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        <div class="text-center">
+        <p> <a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[8]["Id"]; ?>">Agregar a la Carta</a></p> 
+        </div>
         </div>
         <div class="col-md-5"><br><br><br>
         <?php echo '<img src='.$tem[13]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
@@ -134,10 +148,12 @@ $tem = $res;
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-7">
-            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[14]['nombre_producto'].'</strong>';?></h2>
-        <?php echo '<strong style= color:#fff;>'.$tem[14]['descripcion_producto'].'</strong>';?>
+            <h2 class="featurette-heading" style="color: white"><?php echo '<strong>'.$tem[14]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong style="color: white">'.$tem[14]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:#fff;>$'.$tem[14]['precio_venta'].' </h5>';?>
-        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        <div class="text-center">           
+            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[9]["Id"]; ?>">Agregar a la Carta</a></p>      
+        </div>  
         </div>
         <div class="col-md-5"><br><br><br>
         <?php echo '<img src='.$tem[14]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>

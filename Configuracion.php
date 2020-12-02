@@ -1,9 +1,9 @@
 <?php
 //DB details
 $dbHost = 'localhost';
-$dbUsername = 'root';
-$dbPassword = '';
-$dbName = 'aztecagames';
+$dbUsername = 'id15523793_user1';
+$dbPassword = 'b9]|\5*[>~\]U_\E';
+$dbName = 'id15523793_aztecagame';
 
 //Create connection and select DB
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);

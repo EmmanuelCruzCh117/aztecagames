@@ -6,12 +6,12 @@ $cart = new Cart;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>View Cart - PHP Shopping Cart Tutorial</title>
+    <title>Carrito Azteca</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="./assets/css/princip.css"></script>
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/v.css">
     <style>
     .container{padding: 20px;}
     input[type="number"]{width: 20%;}
@@ -50,30 +50,40 @@ $cart = new Cart;
                         <a href="juegos.php" class="nav-link">Juegos</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="consolas.html" class="nav-link">Consolas</a>
+                        <a href="consolas.php" class="nav-link">Consolas</a>
                     </li>
                     <li class="navbar-item active">
                         <a href="Comentarios.html" class="nav-link">Comentarios</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="assets/Car/VerCarta.php" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="VerCarta.php" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
+    <br><br>
 <div class="container">
-<div class="panel panel-default">
-<div class="panel-heading"> 
+<div class="card">
+<div class="card-header"> 
 
-<ul class="nav nav-pills">
-  <li role="presentation"><a href="index.php">Inicio</a></li>
-  <li role="presentation" class="active"><a href="VerCarta.php">Ver Carta</a></li>
-  <li role="presentation"><a href="Pagos.php">Pagos</a></li>
+<ul class="nav navbar">
+  <li class="nav-item" style="border-radius: 5px;
+    background-color: aquamarine;
+    padding: 5px;
+    text-decoration: none;"><a href="index.php">Inicio</a></li>
+  <li class="nav-item" style="border-radius: 5px;
+    background-color: aquamarine;
+    padding: 5px;
+    text-decoration: none;" class="active"><a href="VerCarta.php">Ver Carrito</a></li>
+  <li class="nav-item" style="border-radius: 5px;
+    background-color: aquamarine;
+    padding: 5px;
+    text-decoration: none;"><a href="Pagos.php">Pagos</a></li>
 </ul>
 </div>
 
-<div class="panel-body">
+<div class="card-body">
 
 
     <h1>Carrito de compras</h1>
@@ -84,7 +94,7 @@ $cart = new Cart;
             <th>Precio</th>
             <th>Cantidad</th>
             <th>Sub total</th>
-            <th>&nbsp;</th>
+            <th>Eliminar</th>
         </tr>
     </thead>
     <tbody>
@@ -104,25 +114,41 @@ $cart = new Cart;
             </td>
         </tr>
         <?php } }else{ ?>
-        <tr><td colspan="5"><p>Tu carta esta vacia.....</p></td>
+        <tr><td colspan="5"><p>Tu carrito esta vacio.....</p></td>
         <?php } ?>
     </tbody>
     <tfoot>
         <tr>
-            <td><a href="./juegos.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Comprando</a></td>
+            <td><a href="juegos.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> <-- Seguir Comprando</a></td>
             <td colspan="2"></td>
             <?php if($cart->total_items() > 0){ ?>
             <td class="text-center"><strong>Total <?php echo '$'.$cart->total().' USD'; ?></strong></td>
-            <td><a href="Pagos.php" class="btn btn-success btn-block">Pagos <i class="glyphicon glyphicon-menu-right"></i></a></td>
+            <td><a href="Pagos.php" class="btn btn-success btn-block">Pagar --> <i class="glyphicon glyphicon-menu-right"></i></a></td>
             <?php } ?>
         </tr>
     </tfoot>
     </table>
     
     </div>
- <div class="panel-footer">BaulPHP</div>
+ <div class="card-footer">Carrito Azteca/div>
  </div><!--Panek cierra-->
- 
+            </div>
 </div>
+<br><br><br>
+<footer class="footer bg-dark">
+        <div class="container-xl">
+            <h3>Contactanos en nuestras redes</h3>
+            <a style="background-color: transparent;" href="#"> <i class="fab fa-facebook"> </i></a>
+            <a style="background-color: transparent;" href="#"><i class="fab fa-twitter-square"> </i></a>
+            <a style="background-color: transparent;" href="#"><i class="fab fa-whatsapp-square"> </i></a>
+            <h3>Envianos un comentario</h3>
+            <a href="Comentarios.html" type="button">Enviar</a>
+            <section class="container">
+                <a href="index.html"><img src="assets/img/logohead@4x.png" alt="" width="100px"></a>
+                <h5 class="mt-5 text-center bg-gradient-light">Copyright © 2020 AZTECAGAMES | Todos los derechos reservados
+                </h5>
+            </section>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <?php
-include('assets/data/conexion_global.php');
+include 'assets/data/conexion_global.php';
+include 'Configuracion.php';
 
 $obj=new ConexionGlobal;
 
@@ -15,14 +16,14 @@ $tem = $res;
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/accion.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos</title>
-    
 </head>
 
 <body>
-<header class="navbar-light bg-light">
+    <header class="navbar-light bg-light">
         <div class="container-xl">
             <nav class="navbar navbar-expand-lg">
                 <a href="index.html" class="navbar-brand text-black mr-auto">
@@ -48,14 +49,14 @@ $tem = $res;
                         <a href="Comentarios.html" class="nav-link">Comentarios</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="carrito.php" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="VerCarta.php" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <div class="navbar-dark bg-dark">
+    <div class="navbar-dark darki">
         <div class="container-xl">
             <nav class="navbar navbar-expand-lg">
                 <ul class="navbar-nav">
@@ -80,14 +81,16 @@ $tem = $res;
     </div>
 
     <div class="container marketing">
-        <?php echo '<h1 style= color:#fff;><strong>'.$tem[0]['categoria'].'</strong></h1>';?><br>
+        <?php echo '<h1 style><strong style= color:#fff;>'.$tem[0]['categoria'].'</strong></h1>';?><br>
         <hr class="featurette-divider">
         <div class="row featurette">
         <div class="col-md-7">
-        <?php echo '<h2 style= color:#fff; class="featurette-heading">'.$tem[0]['nombre_producto'].'</h2>';?>
-        <?php echo '<strong>'.$tem[0]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h2 style="color: white"; class="featurette-heading">'.$tem[0]['nombre_producto'].'</h2>';?>
+        <?php echo '<strong style="color: white"; >'.$tem[0]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:#fff;>$'.$tem[0]['precio_venta'].' </h5>';?>
-        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        <div class="text-center">
+            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[5]["Id"]; ?>">Agregar a la Carta</a></p>
+        </div>
         </div>
         <div class="col-md-5"><br><br><br>
         <?php echo '<img src='.$tem[0]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
@@ -97,12 +100,13 @@ $tem = $res;
 
         <hr class="featurette-divider">
         <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">
-        <?php echo '<strong style= color:#fff;>'.$tem[1]['nombre_producto'].'</strong>';?></h2>
-        <?php echo '<strong>'.$tem[1]['descripcion_producto'].'</strong>';?>
+            <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading" style="color: white"><?php echo '<strong>'.$tem[1]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong style="color: white">'.$tem[1]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:#fff;>$'.$tem[1]['precio_venta'].' </h5>';?>
-        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        <div class="text-center">
+            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[6]["Id"]; ?>">Agregar a la Carta</a></p>
+        </div>
         </div>
         <div class="col-md-5"><br><br><br>
         <?php echo '<img src='.$tem[1]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
@@ -113,10 +117,12 @@ $tem = $res;
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-7">
-            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[2]['nombre_producto'].'</strong>';?></h2>
-        <?php echo '<strong>'.$tem[2]['descripcion_producto'].'</strong>';?>
+            <h2 class="featurette-heading" style="color: white"><?php echo '<strong>'.$tem[2]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong style= color:#fff;>'.$tem[2]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:#fff;>$'.$tem[2]['precio_venta'].' </h5>';?>
-        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        <div class="text-center">
+           <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[7]["Id"]; ?>">Agregar a la Carta</a></p> 
+        </div>
         </div>
         <div class="col-md-5"><br><br><br>
         <?php echo '<img src='.$tem[2]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
@@ -126,10 +132,12 @@ $tem = $res;
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[3]['nombre_producto'].'</strong>';?></h2>
-        <?php echo '<strong>'.$tem[3]['descripcion_producto'].'</strong>';?>
+            <h2 class="featurette-heading" style="color: white"><?php echo '<strong>'.$tem[3]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong style="color: white">'.$tem[3]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:#fff;>$'.$tem[3]['precio_venta'].' </h5>';?>
-        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        <div class="text-center">
+        <p> <a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[8]["Id"]; ?>">Agregar a la Carta</a></p> 
+        </div>
         </div>
         <div class="col-md-5"><br><br><br>
         <?php echo '<img src='.$tem[3]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
@@ -140,10 +148,12 @@ $tem = $res;
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-7">
-            <h2 class="featurette-heading"><?php echo '<strong style= color:#fff;>'.$tem[4]['nombre_producto'].'</strong>';?></h2>
-        <?php echo '<strong>'.$tem[4]['descripcion_producto'].'</strong>';?>
+            <h2 class="featurette-heading" style="color: white"><?php echo '<strong>'.$tem[4]['nombre_producto'].'</strong>';?></h2>
+        <?php echo '<strong style="color: white">'.$tem[4]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:#fff;>$'.$tem[4]['precio_venta'].' </h5>';?>
-        <p><a class="btn btn-secondary" style="background-color: #0000ff; border: none;" href="#" role="button">Comprar &raquo;</a></p>
+        <div class="text-center">           
+            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[9]["Id"]; ?>">Agregar a la Carta</a></p>      
+        </div>  
         </div>
         <div class="col-md-5"><br><br><br>
         <?php echo '<img src='.$tem[4]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>

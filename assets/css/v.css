@@ -1,0 +1,67 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+body {
+    background: #ee9460;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, rgb(131, 230, 203), #4361ee);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, rgb(131, 230, 203), #4361ee);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.panel-body {
+    font-size: 50px;
+}
+
+.navbar-nav a:hover {
+    background-color: #ee9460;
+}
+
+.text-cont {
+    text-align: center;
+    color: white;
+    padding-top: 300px;
+    padding-bottom: 300px;
+}
+
+.text-cont h1 {
+    font-size: 60px;
+}
+
+.cont {
+    width: 650px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 80px;
+    padding-top: 50px;
+}
+
+.footer {
+    background-color: rgb(53, 52, 52);
+    color: white;
+    height: auto;
+    padding-top: 30px;
+}
+
+.footer .container-xl i {
+    height: 10px;
+    font-size: 30px;
+}
+
+.footer .container-xl p {
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.footer .container-xl a {
+    font-size: 20px;
+    text-decoration: none;
+    border-color: snow;
+    background-color: rgb(63, 63, 63);
+    color: rgb(255, 255, 255);
+    padding: 13px 13px;
+}
