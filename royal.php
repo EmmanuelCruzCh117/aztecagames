@@ -90,7 +90,7 @@ $tem = $res;
         <?php echo '<strong style="color: black"; >'.$tem[20]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:black;>$'.$tem[20]['precio_venta'].' </h5>';?>
         <div class="text-center">
-            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[5]["Id"]; ?>">Agregar a la Carta</a></p>
+            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[20]["Id"]; ?>">Agregar a la Carta</a></p>
         </div>
         </div>
         <div class="col-md-5"><br><br><br>
@@ -106,7 +106,7 @@ $tem = $res;
         <?php echo '<strong style="color: black">'.$tem[21]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:black;>$'.$tem[21]['precio_venta'].' </h5>';?>
         <div class="text-center">
-            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[6]["Id"]; ?>">Agregar a la Carta</a></p>
+            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[21]["Id"]; ?>">Agregar a la Carta</a></p>
         </div>
         </div>
         <div class="col-md-5"><br><br><br>
@@ -122,7 +122,7 @@ $tem = $res;
         <?php echo '<strong style= color:black;>'.$tem[22]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:black;>$'.$tem[22]['precio_venta'].' </h5>';?>
         <div class="text-center">
-           <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[7]["Id"]; ?>">Agregar a la Carta</a></p> 
+           <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[22]["Id"]; ?>">Agregar a la Carta</a></p> 
         </div>
         </div>
         <div class="col-md-5"><br><br><br>
@@ -137,7 +137,7 @@ $tem = $res;
         <?php echo '<strong style="color: black">'.$tem[23]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:black;>$'.$tem[23]['precio_venta'].' </h5>';?>
         <div class="text-center">
-        <p> <a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[8]["Id"]; ?>">Agregar a la Carta</a></p> 
+        <p> <a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[23]["Id"]; ?>">Agregar a la Carta</a></p> 
         </div>
         </div>
         <div class="col-md-5"><br><br><br>
@@ -153,7 +153,7 @@ $tem = $res;
         <?php echo '<strong style="color: black">'.$tem[24]['descripcion_producto'].'</strong>';?>
         <?php echo '<h5 style= color:black;>$'.$tem[24]['precio_venta'].' </h5>';?>
         <div class="text-center">           
-            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[9]["Id"]; ?>">Agregar a la Carta</a></p>      
+            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[24]["Id"]; ?>">Agregar a la Carta</a></p>      
         </div>  
         </div>
         <div class="col-md-5"><br><br><br>
