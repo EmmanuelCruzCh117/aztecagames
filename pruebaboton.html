@@ -4,10 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/pincip.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
 <body>
+    <header class="navbar-light bg-light">
+        <div class="container-xl">
+            <nav class="navbar navbar-expand-lg">
+                <a href="index.html" class="navbar-brand text-black mr-auto">
+                    <img src="assets/img/logo1@4x.png" width="270" height="75" alt="" loading="lazy">
+                </a>
+                <ul class="navbar-nav">
+                    <li class="navbar-item active">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="login.html" class="nav-link">Login</a>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="registro.html" class="nav-link">Registrate</a>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="juegos.php" class="nav-link">Juegos</a>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="consolas.html" class="nav-link">Consolas</a>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="Comentarios.html" class="nav-link">Comentarios</a>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="VerCarta.php" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <br><br><br><br>
+
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <style>
         /* Media query for mobile viewport */
@@ -42,8 +79,8 @@
             // Create a PayPal app: https://developer.paypal.com/developer/applications/create
 
             client: {
-                sandbox: '',
-                production: ''
+                sandbox: 'AVWcaB4-voGU3yxV2D3FuQHGs37bCOHkKA_4kbdjIEO65bTu2YHSnM0viVbaMkZnlma_YYrGkN0D1mrC',
+                production: 'AVWcaB4-voGU3yxV2D3FuQHGs37bCOHkKA_4kbdjIEO65bTu2YHSnM0viVbaMkZnlma_YYrGkN0D1mrC'
             },
 
             // Wait for the PayPal button to be clicked
@@ -56,24 +93,22 @@
                                 total: '0.01',
                                 currency: 'MXN'
                             },
-                            description: "Compra de productos a Develoteca:$0.01",
+                            description: "Compra de productos a AztecaGames :$0.01",
                             custom: "Codigo"
                         }]
                     }
                 });
             },
-
             // Wait for the payment to be authorized by the customer
-
             onAuthorize: function(data, actions) {
                 return actions.payment.execute().then(function() {
                     console.log(data);
-                    window.location = "verificador.php?paymentToken=" + data.paymentToken + "&paymentID=" + data.paymentID;
+                    window.location = "AccionCarta.php?action=placeOrder";
                 });
             }
-
         }, '#paypal-button-container');
     </script>
+    <div id="paypal-button-container"></div>
 </body>
 
 </html>

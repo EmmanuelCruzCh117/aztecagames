@@ -58,7 +58,7 @@ if(!isset($_REQUEST['id'])){
 <li class="nav-item" style="border-radius: 5px;
     background-color: aquamarine;
     padding: 5px;
-    text-decoration: none; margin: 10px;"><a href="index.php">Inicio</a></li>
+    text-decoration: none; margin: 10px;"><a href="index.html">Inicio</a></li>
 </ul>
 </div>
 

@@ -6,8 +6,8 @@ class ConexionGlobal{
               $conn = null;
           try{
                
-            $conn = new PDO('mysql:host=localhost;dbname=id15523793_aztecagames','id15523793_user1','<cu5e+*SU#-ffdxg');
-           // $conn = new PDO('mysql:host=localhost;dbname=aztecagame','root','');
+           // $conn = new PDO('mysql:host=localhost;dbname=id15523793_aztecagames','id15523793_user1','<cu5e+*SU#-ffdxg');
+            $conn = new PDO('mysql:host=localhost;dbname=aztecagame','root','');
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
               //echo 'Se estableció la conexión <br> <br>';
