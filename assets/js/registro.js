@@ -29,7 +29,7 @@ $(document).ready(function() {
             }).then(response => response.json())
             .then(response => {
                 if (response.dato == 'ok') {
-                    location.href = "login.html";
+                    location.href = "index.html";
                 } else {
                     alert("Datos no validos, revisa tu información");
                 }

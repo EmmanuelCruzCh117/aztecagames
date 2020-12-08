@@ -33,19 +33,13 @@ $cart = new Cart;
 <header class="navbar-light bg-light">
         <div class="container-xl">
             <nav class="navbar navbar-expand-lg">
-                <a href="index.html" class="navbar-brand text-black mr-auto">
+                <a href="principal.html" class="navbar-brand text-black mr-auto">
                     <img src="assets/img/logo1@4x.png" width="270" height="75" alt="" loading="lazy">
                 </a>
                 <ul class="navbar-nav">
                     <li class="navbar-item active">
-                        <a href="index.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="login.html" class="nav-link">Login</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="registro.html" class="nav-link">Registrate</a>
-                    </li>
+                        <a href="principal.html" class="nav-link">Home</a>
+                    </li>               
                     <li class="navbar-item active">
                         <a href="juegos.php" class="nav-link">Juegos</a>
                     </li>
@@ -54,6 +48,9 @@ $cart = new Cart;
                     </li>
                     <li class="navbar-item active">
                         <a href="Comentarios.html" class="nav-link">Comentarios</a>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="index.html" class="nav-link">Log Out</a>
                     </li>
                     <li class="navbar-item active">
                         <a href="VerCarta.php" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
@@ -71,7 +68,7 @@ $cart = new Cart;
   <li class="nav-item" style="border-radius: 5px;
     background-color: aquamarine;
     padding: 5px;
-    text-decoration: none;"><a href="index.php">Inicio</a></li>
+    text-decoration: none;"><a href="principal.html">Inicio</a></li>
   <li class="nav-item" style="border-radius: 5px;
     background-color: aquamarine;
     padding: 5px;
@@ -106,9 +103,9 @@ $cart = new Cart;
         ?>
         <tr>
             <td><?php echo $item["name"]; ?></td>
-            <td><?php echo '$'.$item["price"].' USD'; ?></td>
+            <td><?php echo '$'.$item["price"].' MXN'; ?></td>
             <td><input type="number" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')"></td>
-            <td><?php echo '$'.$item["subtotal"].' USD'; ?></td>
+            <td><?php echo '$'.$item["subtotal"].' MXN'; ?></td>
             <td>
                 <a href="AccionCarta.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Confirma eliminar?')"><i class="glyphicon glyphicon-trash"></i></a>
             </td>
@@ -122,7 +119,7 @@ $cart = new Cart;
             <td><a href="juegos.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> <-- Seguir Comprando</a></td>
             <td colspan="2"></td>
             <?php if($cart->total_items() > 0){ ?>
-            <td class="text-center"><strong>Total <?php echo '$'.$cart->total().' USD'; ?></strong></td>
+            <td class="text-center"><strong>Total <?php echo '$'.$cart->total().' MXN'; ?></strong></td>
             <td><a href="Pagos.php" class="btn btn-success btn-block">Pagar --> <i class="glyphicon glyphicon-menu-right"></i></a></td>
             <?php } ?>
         </tr>
@@ -130,7 +127,7 @@ $cart = new Cart;
     </table>
     
     </div>
- <div class="card-footer">Carrito Azteca/div>
+ <div class="card-footer">Carrito Azteca</div>
  </div><!--Panek cierra-->
             </div>
 </div>
@@ -144,7 +141,7 @@ $cart = new Cart;
             <h3>Envianos un comentario</h3>
             <a href="Comentarios.html" type="button">Enviar</a>
             <section class="container">
-                <a href="index.html"><img src="assets/img/logohead@4x.png" alt="" width="100px"></a>
+                <a href="principal.html"><img src="assets/img/logohead@4x.png" alt="" width="100px"></a>
                 <h5 class="mt-5 text-center bg-gradient-light">Copyright © 2020 AZTECAGAMES | Todos los derechos reservados
                 </h5>
             </section>

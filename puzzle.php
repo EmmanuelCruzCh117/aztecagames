@@ -26,19 +26,13 @@ $tem = $res;
     <header class="navbar-light bg-light">
         <div class="container-xl">
             <nav class="navbar navbar-expand-lg">
-                <a href="index.html" class="navbar-brand text-black mr-auto">
+                <a href="principal.html" class="navbar-brand text-black mr-auto">
                     <img src="assets/img/logo1@4x.png" width="270" height="75" alt="" loading="lazy">
                 </a>
                 <ul class="navbar-nav">
                     <li class="navbar-item active">
-                        <a href="index.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="login.html" class="nav-link">Login</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="registro.html" class="nav-link">Registrate</a>
-                    </li>
+                        <a href="principal.html" class="nav-link">Home</a>
+                    </li>               
                     <li class="navbar-item active">
                         <a href="juegos.php" class="nav-link">Juegos</a>
                     </li>
@@ -47,6 +41,9 @@ $tem = $res;
                     </li>
                     <li class="navbar-item active">
                         <a href="Comentarios.html" class="nav-link">Comentarios</a>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="index.html" class="nav-link">Log Out</a>
                     </li>
                     <li class="navbar-item active">
                         <a href="VerCarta.php" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
@@ -170,7 +167,7 @@ $tem = $res;
             <h3>Envianos un comentario</h3>
             <a href="Comentarios.html" type="button">Enviar</a>
             <section class="container">
-                <a href="index.html"><img src="assets/img/logohead@4x.png" alt="" width="100px"></a>
+                <a href="principal.html"><img src="assets/img/logohead@4x.png" alt="" width="100px"></a>
                 <h5 class="mt-5 text-center bg-gradient-light">Copyright © 2020 AZTECAGAMES | Todos los derechos reservados
                 </h5>
             </section>

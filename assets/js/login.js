@@ -27,7 +27,7 @@ $(document).ready(function() {
             .then(response => {
                 //console.log(response.datos);
                 if (response.dato == 'ok') {
-                    location.href = "docs/index1.html";
+                    location.href = "principal.html";
                 } else {
                     alert("Datos incorrectos :(");
                 }

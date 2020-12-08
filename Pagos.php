@@ -8,7 +8,7 @@ $cart = new Cart;
 
 // redirect to home if cart is empty
 if($cart->total_items() <= 0){
-    header("Location: index.php");
+    header("Location: principal.html");
 }
 
 // set customer ID in session
@@ -39,19 +39,13 @@ $custRow = $query->fetch_assoc();
 <header class="navbar-light bg-light">
         <div class="container-xl">
             <nav class="navbar navbar-expand-lg">
-                <a href="index.html" class="navbar-brand text-black mr-auto">
+                <a href="principal.html" class="navbar-brand text-black mr-auto">
                     <img src="assets/img/logo1@4x.png" width="270" height="75" alt="" loading="lazy">
                 </a>
                 <ul class="navbar-nav">
                     <li class="navbar-item active">
-                        <a href="index.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="login.html" class="nav-link">Login</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="registro.html" class="nav-link">Registrate</a>
-                    </li>
+                        <a href="principal.html" class="nav-link">Home</a>
+                    </li>               
                     <li class="navbar-item active">
                         <a href="juegos.php" class="nav-link">Juegos</a>
                     </li>
@@ -60,6 +54,9 @@ $custRow = $query->fetch_assoc();
                     </li>
                     <li class="navbar-item active">
                         <a href="Comentarios.html" class="nav-link">Comentarios</a>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="index.html" class="nav-link">Log Out</a>
                     </li>
                     <li class="navbar-item active">
                         <a href="VerCarta.php" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
@@ -77,7 +74,7 @@ $custRow = $query->fetch_assoc();
   <li class="nav-item" style="border-radius: 5px;
     background-color: aquamarine;
     padding: 5px;
-    text-decoration: none;"><a href="index.php">Inicio</a></li>
+    text-decoration: none;"><a href="principal.html">Inicio</a></li>
   <li class="nav-item" style="border-radius: 5px;
     background-color: aquamarine;
     padding: 5px;
@@ -109,9 +106,9 @@ $custRow = $query->fetch_assoc();
         ?>
         <tr>
             <td><?php echo $item["name"]; ?></td>
-            <td><?php echo '$'.$item["price"].' USD'; ?></td>
+            <td><?php echo '$'.$item["price"].' MXN'; ?></td>
             <td><?php echo $item["qty"]; ?></td>
-            <td><?php echo '$'.$item["subtotal"].' USD'; ?></td>
+            <td><?php echo '$'.$item["subtotal"].' MXN'; ?></td>
         </tr>
         <?php } }else{ ?>
         <tr><td colspan="4"><p>No hay articulos en tu carrito......</p></td>
@@ -121,7 +118,7 @@ $custRow = $query->fetch_assoc();
         <tr>
             <td colspan="3"></td>
             <?php if($cart->total_items() > 0){ ?>
-            <td class="text-center"><strong>Total <?php echo '$'.$cart->total().' USD'; ?></strong></td>
+            <td class="text-center"><strong>Total <?php echo '$'.$cart->total().' MXN'; ?></strong></td>
             <?php } ?>
         </tr>
     </tfoot>
@@ -134,7 +131,7 @@ $custRow = $query->fetch_assoc();
         <p><?php echo $custRow['address']; ?></p>
     </div>
     <div class="footBtn">
-        <a href="index.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> <-- Continuar Comprando</a>
+        <a href="principal.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> <-- Continuar Comprando</a>
         
         <br><br><br><br>
 
@@ -204,8 +201,8 @@ $custRow = $query->fetch_assoc();
         }, '#paypal-button-container');
     </script> 
    <div id="paypal-button-container"></div> 
-<a href="AccionCarta.php?action=placeOrder" class="btn btn-success orderBtn">Pagar con Bitcoin --> <i class="glyphicon glyphicon-menu-right"></i></a>
-       
+<a href="bitco.php" class="btn btn-success orderBtn">Pagar con Bitcoin --> <i class="glyphicon glyphicon-menu-right"></i></a>
+       <!-- AccionCarta.php?action=placeOrder -->
     </div>
     </div>
         </div>
@@ -221,7 +218,7 @@ $custRow = $query->fetch_assoc();
             <h3>Envianos un comentario</h3>
             <a href="Comentarios.html" type="button">Enviar</a>
             <section class="container">
-                <a href="index.html"><img src="assets/img/logohead@4x.png" alt="" width="100px"></a>
+                <a href="principal.html"><img src="assets/img/logohead@4x.png" alt="" width="100px"></a>
                 <h5 class="mt-5 text-center bg-gradient-light">Copyright © 2020 AZTECAGAMES | Todos los derechos reservados
                 </h5>
             </section>

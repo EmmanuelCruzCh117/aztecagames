@@ -20,7 +20,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         );
         
         $insertItem = $cart->insert($itemData);
-        $redirectLoc = $insertItem?'VerCarta.php':'index.php';
+        $redirectLoc = $insertItem?'VerCarta.php':'principal.html';
         header("Location: ".$redirectLoc);
     }elseif($_REQUEST['action'] == 'updateCartItem' && !empty($_REQUEST['id'])){
         $itemData = array(
@@ -57,8 +57,8 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
             header("Location: Pagos.php");
         }
     }else{
-        header("Location: index.php");
+        header("Location: principal.html");
     }
 }else{
-    header("Location: index.php");
+    header("Location: principal.html");
 }

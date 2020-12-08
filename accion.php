@@ -26,19 +26,13 @@ $tem = $res;
     <header class="navbar-light bg-light">
         <div class="container-xl">
             <nav class="navbar navbar-expand-lg">
-                <a href="index.html" class="navbar-brand text-black mr-auto">
+                <a href="principal.html" class="navbar-brand text-black mr-auto">
                     <img src="assets/img/logo1@4x.png" width="270" height="75" alt="" loading="lazy">
                 </a>
                 <ul class="navbar-nav">
                     <li class="navbar-item active">
-                        <a href="index.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="login.html" class="nav-link">Login</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="registro.html" class="nav-link">Registrate</a>
-                    </li>
+                        <a href="principal.html" class="nav-link">Home</a>
+                    </li>               
                     <li class="navbar-item active">
                         <a href="juegos.php" class="nav-link">Juegos</a>
                     </li>
@@ -47,6 +41,9 @@ $tem = $res;
                     </li>
                     <li class="navbar-item active">
                         <a href="Comentarios.html" class="nav-link">Comentarios</a>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="index.html" class="nav-link">Log Out</a>
                     </li>
                     <li class="navbar-item active">
                         <a href="VerCarta.php" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
@@ -85,15 +82,15 @@ $tem = $res;
         <hr class="featurette-divider">
         <div class="row featurette">
         <div class="col-md-7">
-        <?php echo '<h2 style="color: white"; class="featurette-heading">'.$tem[0]['nombre_producto'].'</h2>';?>
-        <?php echo '<strong style="color: white"; >'.$tem[0]['descripcion_producto'].'</strong>';?>
-        <?php echo '<h5 style= color:#fff;>$'.$tem[0]['precio_venta'].' </h5>';?>
+        <?php echo '<h2 style="color: white"; class="featurette-heading">'.$tem[29]['nombre_producto'].'</h2>';?>
+        <?php echo '<strong style="color: white"; >'.$tem[29]['descripcion_producto'].'</strong>';?>
+        <?php echo '<h5 style= color:#fff;>$'.$tem[29]['precio_venta'].' </h5>';?>
         <div class="text-center">
-            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[0]["Id"]; ?>">Agregar a la Carta</a></p>
+            <p><a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $tem[29]["Id"]; ?>">Agregar a la Carta</a></p>
         </div>
         </div>
         <div class="col-md-5"><br><br><br>
-        <?php echo '<img src='.$tem[0]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
+        <?php echo '<img src='.$tem[29]['url_imagen'].' width="250" height="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx.auto">';?>
         </div>
         </div>
 
@@ -170,7 +167,7 @@ $tem = $res;
             <h3>Envianos un comentario</h3>
             <a href="Comentarios.html" type="button">Enviar</a>
             <section class="container">
-                <a href="index.html"><img src="assets/img/logohead@4x.png" alt="" width="100px"></a>
+                <a href="principal.html"><img src="assets/img/logohead@4x.png" alt="" width="100px"></a>
                 <h5 class="mt-5 text-center bg-gradient-light">Copyright © 2020 AZTECAGAMES | Todos los derechos reservados
                 </h5>
             </section>
